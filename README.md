@@ -1,4 +1,7 @@
-# Build and Deploy a Better Spotify 2.0 Clone Music App with React 18! (Tailwind, Shazam, Redux)
-![Spotify Clone](https://i.ibb.co/mFh2kGZ/Thumbnail-2.png)
+#About
 
-### Launch your development career with project-based coaching on [JS Mastery Pro](https://www.jsmastery.pro).
+Fully function music player with resposive web design for various devices sizes.
+Music Player has a modern homepage, fully-fledged music player, search, lyrics, song exploration features, search, popular music around you, worldwide top charts etc.
+Technologies Used : React , Tailwind CSS, RapidAPI and Redux Toolkit
+
+Project Host Link :- project-musicplayer.netlify.app
