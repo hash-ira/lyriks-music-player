@@ -9,4 +9,3 @@ Music Player has a modern homepage, fully-fledged music player, search, lyrics, 
 <h4>Technologies Used : React , Tailwind CSS, RapidAPI and Redux Toolkit</h4>
 <br/>
 <h2>Project Host Link :- <a href = "https://project-musicplayer.netlify.app/">project-musicplayer.netlify.app</a></h2>
-References : <a href="https://www.youtube.com/watch?v=I1cpb0tYV74"> https://www.youtube.com/watch?v=I1cpb0tYV74 </a>
