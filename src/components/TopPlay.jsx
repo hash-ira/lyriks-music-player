@@ -12,7 +12,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 
 const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => (
-  <div className={`w-full flex flex-row items-center hover:bg-[#4c426e] ${activeSong?.title === song?.title ? 'bg-[#4c426e]' : 'bg-transparent'} py-2 p-4 rounded-lg cursor-pointer mb-2`}>
+  <div className={`w-full flex flex-row items-center hover:bg-[#424149] ${activeSong?.title === song?.title ? 'bg-[#424149]' : 'bg-transparent'} px-3 py-2 rounded-md cursor-pointer mb-1`}>
     <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
     <div className="flex-1 flex flex-row justify-between items-center">
       <img className="w-20 h-20 rounded-lg" src={song?.images?.coverart} alt={song?.title} />
@@ -49,7 +49,7 @@ const TopPlay = () => {
     divRef.current.scrollIntoView({ behavior: 'smooth' });
   });
 
-  const topPlays = data?.slice(0, 4);
+  const topPlays = data?.slice(0, 5);
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -61,16 +61,13 @@ const TopPlay = () => {
   };
 
   return (
-    <div ref={divRef} className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] max-w-full flex flex-col">
+    <div ref={divRef} className="lg:ml-4 ml-0 lg:mb-0 mb-5 flex-1 lg:max-w-[400px] max-w-full flex flex-col">
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-center">
-          <h2 className="text-white font-bold text-2xl">Top Charts</h2>
-          <Link to="/top-charts">
-            <p className="text-gray-300 text-base cursor-pointer">See more</p>
-          </Link>
+          <h2 className="text-white font-bold text-2xl">Top Songs</h2>
         </div>
 
-        <div className="mt-4 flex flex-col gap-1">
+        <div className="mt-3 flex flex-col">
           {topPlays?.map((song, i) => (
             <TopChartCard
               key={song.key}
@@ -88,9 +85,6 @@ const TopPlay = () => {
       <div className="w-full flex flex-col mt-8">
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-white font-bold text-2xl">Top Artists</h2>
-          <Link to="/top-artists">
-            <p className="text-gray-300 text-base cursor-pointer">See more</p>
-          </Link>
         </div>
 
         <Swiper
@@ -102,10 +96,11 @@ const TopPlay = () => {
           modules={[FreeMode]}
           className="mt-4"
         >
-          {topPlays?.slice(0, 4).map((artist) => (
+
+          {topPlays?.slice(0, 5).map((artist) => (
             <SwiperSlide
               key={artist?.key}
-              style={{ width: '25%', height: 'auto' }}
+              style={{ width: '25%', height: '100%' }}
               className="shadow-lg rounded-full animate-slideright"
             >
               <Link to={`/artists/${artist?.artists[0].adamid}`}>
