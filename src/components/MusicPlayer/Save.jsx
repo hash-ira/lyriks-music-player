@@ -8,6 +8,7 @@ function Save({activeSong}) {
   const { savedSongs }= useSelector((state) =>state.saved);
   const [svd , setSaved] = React.useState(false);
 
+
   useEffect( ()=>{
     setSaved(savedSongs.includes(activeSong));
   } , [activeSong]);
@@ -18,7 +19,8 @@ function Save({activeSong}) {
       if( !songPresent ) dispatch(addSong(activeSong)); 
       setSaved(true);
     }else{
-      if( songPresent) dispatch(removeSong(activeSong));
+      if(songPresent) dispatch(removeSong(activeSong));
+      // console.log(savedSongs);
       setSaved(false);
     }
   }

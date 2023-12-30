@@ -13,9 +13,7 @@ const savedSongsSlice = createSlice({
       },
 
       removeSong: (state, action) => {
-        state.savedSongs = state.savedSongs.filter((item)=>{
-          return item !== action.payload;
-        })
+        state.savedSongs = state.savedSongs.filter(item => item.key !== action.payload.key);
       },
     },
   });

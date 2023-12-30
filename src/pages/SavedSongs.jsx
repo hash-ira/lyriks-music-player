@@ -11,7 +11,6 @@ function SavedSongs() {
     const dispatch = useDispatch();
     const { savedSongs } = useSelector((state) => state.saved);
     const { activeSong, isPlaying } = useSelector((state) => state.player);
-    console.log(savedSongs);
     const data = savedSongs;
     // if (isFetching) return <Loader title="Loading songs..." />;
 
