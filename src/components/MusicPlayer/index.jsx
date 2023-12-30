@@ -7,8 +7,6 @@ import Player from './Player';
 import Seekbar from './Seekbar';
 import Track from './Track';
 import VolumeBar from './VolumeBar';
-import Save from './Save'
-import { addSong } from '../../redux/features/savedSongsSlice';
 
 const MusicPlayer = () => {
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } = useSelector((state) => state.player);
@@ -18,7 +16,7 @@ const MusicPlayer = () => {
   const [volume, setVolume] = useState(0.3);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
-  const [ saved, setSaved] = useState(false);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -55,16 +53,10 @@ const MusicPlayer = () => {
     }
   };
 
-  const saveSong = () => {
-    if(!saved){
-      dispatch(addSong(activeSong))
-      setSaved(true);
-    }
-  }
 
   return (
     <div className="relative sm:px-12 px-8 w-full flex items-center justify-between">
-      <Track isPlaying={isPlaying} isActive={isActive} activeSong={activeSong} saveSong={saveSong} saved={saved} />
+      <Track isPlaying={isPlaying} isActive={isActive} activeSong={activeSong} />
       <div className="flex-1 flex flex-col items-center justify-center">
         <Controls
           isPlaying={isPlaying}

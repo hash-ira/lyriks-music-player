@@ -12,12 +12,14 @@ const savedSongsSlice = createSlice({
         state.savedSongs = [ ...state.savedSongs , action.payload]
       },
 
-    //   removeSong: (state, action) => {
-    //     state.savedSongs = [ ...state.savedSongs , action.payload]
-    //   },
+      removeSong: (state, action) => {
+        state.savedSongs = state.savedSongs.filter((item)=>{
+          return item !== action.payload;
+        })
+      },
     },
   });
 
-export const { addSong } = savedSongsSlice.actions;
+export const { addSong , removeSong } = savedSongsSlice.actions;
 
 export default savedSongsSlice.reducer;
